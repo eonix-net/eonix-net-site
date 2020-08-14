@@ -23,9 +23,11 @@ staticDir = [ "images"]
   description = "Eonix Corporation"
   keywords = "homepage, eonix, corporation"
   images = [""]
+  [params.portrait]
+    path = "/images/eonix-logo.png"
 
   # Default theme "light" or "dark"
-  defaultTheme = "light"
+  defaultTheme = "dark"
 
 [taxonomies]
     category = "brand"
@@ -40,16 +42,15 @@ staticDir = [ "images"]
     copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
     readOtherPosts = "Read other posts"
     staticDir = [ "images"]
-
     [languages.en.params.logo]
-    #  logoText = "Welcome to Eonix"
-    #  logoHomeLink = "/"
+      logoText = "Welcome to Eonix"
+      logoHomeLink = "/"
     # or
     #
     # path = "/img/your-example-logo.svg"
     # alt = "Your example logo alt text"
-      path = "/images/eonix-logo.png"
-      alt = "Welcome to Eonix"
+#      path = "/images/eonix-logo.png"
+#      alt = "Welcome to Eonix"
   # And you can even create generic menu
   [[menu.main]]
     identifier = "brands"
