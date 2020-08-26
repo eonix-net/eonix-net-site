@@ -1,0 +1,17 @@
+{{ block "title" . }}
+  <title>
+    {{ if .IsHome }}
+      {{ $.Site.Title }} {{ with $.Site.Params.Subtitle }} — {{ . }} {{ end }}
+    {{ else }}
+      {{ .Title }} :: {{ $.Site.Title }} {{ with $.Site.Params.Subtitle }} — {{ . }}{{ end }}
+    {{ end }}
+  </title>
+{{ end }}
+
+{{ $css := resources.Get "css/main.css" | postCSS (dict "config" "./assets/css/postcss.config.js") | minify }}
+
+{{ with $css }}
+  {{ $securecss := . | resources.Fingerprint }}  
+  <link rel="stylesheet" href="{{ $securecss.Permalink | relURL  }}" integrity="{{ $securecss.Data.Integrity }}" crossorigin="anonymous"> 
+{{ end }} 
+

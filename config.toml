@@ -1,7 +1,7 @@
 baseurl      = "https://eonix-net.github.io"
 title        = "Eonix Corporation"
 languageCode = "en-us"
-theme        = "hello-friend-ng"
+theme        = "eonix"
 paginate     = 10
 staticDir = [ "images"]
 [params]
