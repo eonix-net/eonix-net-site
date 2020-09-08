@@ -1,18 +1,20 @@
 {
+  "name": "eonix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "watch": "cross-env NODE_ENV=development postcss assets/css/style.css -o static/css/theme.css --watch",
-    "build": "cross-env NODE_ENV=production postcss assets/css/style.css -o static/css/theme.css"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "autoprefixer": "^9.5.1",
-    "tailwindcss": "^1.0"
-  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^1.2.0",
-    "concurrently": "^4.1.0",
-    "cross-env": "^5.2.0",
+    "autoprefixer": "^9.8.6",
     "cssnano": "^4.1.10",
-    "postcss-cli": "^6.1.2",
-    "postcss-import": "^12.0.1"
+    "postcss": "^7.0.32",
+    "postcss-cli": "^7.1.2",
+    "postcss-import": "^12.0.1",
+    "tailwindcss": "^1.8.4"
   }
 }

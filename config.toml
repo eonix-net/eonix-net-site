@@ -29,6 +29,9 @@ staticDir = [ "images"]
   # Default theme "light" or "dark"
   defaultTheme = "dark"
 
+[build]
+  useResourceCacheWhen = "never"
+
 [taxonomies]
     category = "brand"
     tag      = "tags"

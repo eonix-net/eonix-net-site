@@ -8,10 +8,11 @@
   </title>
 {{ end }}
 
-{{ $css := resources.Get "css/main.css" | postCSS (dict "config" "./assets/css/postcss.config.js") | minify }}
+{{ $styles := resources.Get "css/main.css" | toCSS | postCSS (dict "config" "./postcss.config.js") }}
 
-{{ with $css }}
-  {{ $securecss := . | resources.Fingerprint }}  
-  <link rel="stylesheet" href="{{ $securecss.Permalink | relURL  }}" integrity="{{ $securecss.Data.Integrity }}" crossorigin="anonymous"> 
-{{ end }} 
-
+{{ if .Site.IsServer }}
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+{{ else }}
+  {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
+{{ end }}

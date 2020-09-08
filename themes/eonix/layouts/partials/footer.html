@@ -1,0 +1,4 @@
+<footer>
+  {{ $transpiled := resources.Get "js/main.js" | babel }}
+  <script type="text/javascript" src="{{ $transpiled.RelPermalink }}" defer></script>
+</footer>
